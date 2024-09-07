@@ -4,15 +4,21 @@
         <item
             android:id="@+id/nav_image"
             android:icon="@drawable/image"
-            android:title="Image" />
+            android:title="Image"
+            android:tint="@color/Preto"
+            />
         <item
             android:id="@+id/nav_home"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Home" />
+            android:icon="@drawable/homeicon"
+            android:title="Home"
+            android:tint="@color/Preto"
+            />
         <item
             android:id="@+id/nav_warning"
             android:icon="@drawable/warning"
-            android:title="Warning" />
+            android:title="Warning"
+            android:tint="@color/Preto"
+            />
 
 
 </menu>
