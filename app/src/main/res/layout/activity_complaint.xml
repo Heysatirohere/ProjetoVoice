@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-     android:background="@color/Cinza_Claro"
-    tools:context=".ComplaintActivity">
+    android:background="@color/Cinza_Claro"
+    android:id="@+id/main"
+    tools:context=".complaint">
 
 
     <TextView
@@ -41,17 +42,18 @@
 
     <Spinner
         android:id="@+id/specificationSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="361dp"
+        android:layout_height="49dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
-        android:prompt="Especificação"
+        android:prompt="@string/spinner_prompt"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        />
 
     <EditText
         android:id="@+id/reportEditText"
@@ -60,7 +62,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text_background"
+        android:background="@color/Cinza_Claro"
         android:gravity="top"
         android:hint="Digite seu relato aqui"
         android:inputType="textMultiLine"
