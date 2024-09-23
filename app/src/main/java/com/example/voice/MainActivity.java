@@ -3,7 +3,6 @@ package com.example.voice;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.activity.EdgeToEdge;
@@ -44,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, MainActivity.class));
             return true;
         } else if (itemId == R.id.nav_warning) {
-            startActivity(new Intent(MainActivity.this, complaint.class));
+            startActivity(new Intent(MainActivity.this, Complaint.class));
             return true;
         } else if (itemId == R.id.nav_image) {
-            startActivity(new Intent(MainActivity.this, notice.class));
+            startActivity(new Intent(MainActivity.this, Notice.class));
             return true;
         } else {
             return false;
