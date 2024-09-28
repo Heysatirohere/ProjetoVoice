@@ -1,12 +1,17 @@
 package com.example.voice;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Notice extends AppCompatActivity {
 
@@ -20,5 +25,28 @@ public class Notice extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Set up the bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+
     }
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.nav_home) {
+            startActivity(new Intent(Notice.this, MainActivity.class));
+            return true;
+        } else if (itemId == R.id.nav_warning) {
+            startActivity(new Intent(Notice.this, Complaint.class));
+            return true;
+        } else if (itemId == R.id.nav_image) {
+            startActivity(new Intent(Notice.this, Notice.class));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -1,6 +1,8 @@
 package com.example.voice;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,10 +16,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Complaint extends AppCompatActivity {
@@ -45,7 +49,32 @@ public class Complaint extends AppCompatActivity {
                 sendComplaint();  // Method to send the complaint
             }
         });
+
+        // Set up the bottom navigation
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
+
     }
+
+    // nav bar
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.nav_home) {
+            startActivity(new Intent(Complaint.this, MainActivity.class));
+            return true;
+        } else if (itemId == R.id.nav_warning) {
+            startActivity(new Intent(Complaint.this, Complaint.class));
+            return true;
+        } else if (itemId == R.id.nav_image) {
+            startActivity(new Intent(Complaint.this, Notice.class));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     private void sendComplaint() {
         String type = dropdown.getSelectedItem().toString();
