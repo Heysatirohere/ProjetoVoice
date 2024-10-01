@@ -46,21 +46,23 @@ public class Complaint extends AppCompatActivity {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendComplaint();  // Method to send the complaint
+                sendComplaint();
             }
         });
 
-        // Set up the bottom navigation
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setOnNavigationItemSelectedListener(this::onNavigationItemSelected);
 
     }
 
-    // nav bar
+
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int itemId = item.getItemId();
 
+        // this shit is very stupid but it works well
+
+        int itemId = item.getItemId();
         if (itemId == R.id.nav_home) {
             startActivity(new Intent(Complaint.this, MainActivity.class));
             return true;
@@ -81,18 +83,18 @@ public class Complaint extends AppCompatActivity {
         String report = reportText.getText().toString();
 
         if (report.isEmpty()) {
-            Toast.makeText(this, "Please fill out the report", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Preencha os campos vazios", Toast.LENGTH_SHORT).show();
             return;
         }
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String urlPostComplaint = "https://4sndv9-3000.csb.app/complaint";
+        String urlPostComplaint = "https://3hdf9d-3000.csb.app/complaint";
 
         StringRequest postRequest = new StringRequest(Request.Method.POST, urlPostComplaint,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(Complaint.this, "Complaint sent successfully!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Complaint.this, "Enviado com sucesso", Toast.LENGTH_SHORT).show();
 
                         reportText.setText("");
                     }
@@ -100,7 +102,7 @@ public class Complaint extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(Complaint.this, "Error sending complaint", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Complaint.this, "Erro ao enviar", Toast.LENGTH_SHORT).show();
                     }
                 }) {
             @Override
