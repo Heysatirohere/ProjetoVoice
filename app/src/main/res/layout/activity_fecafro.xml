@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161616"
+    tools:context="br.fecap.pi.voice.activity.fecafro">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:src="@drawable/banner_fecafro"
+            android:layout_width="305dp"
+            android:layout_height="336dp" />
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_news"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_news" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_whats"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_whats" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_insta"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/icon_insta" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_descricao"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:text="O Coletivo negro Maria Leal - FECAFRO surgiu em 2018 com o propósito de promover um ambiente seguro e confortável para a comunidade negra da FECAP. Após 5 anos de muito trabalho, nosso maiorobjetivo é ser o coletivo piomeiro em interseccionalidade para expandir os horizontes para além dos limites da universidade."
+            android:textColor="#FFFFFF"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.833" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
